@@ -1,19 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Afochat</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <script>navigator.serviceWorker.register("public/service-worker.js")</script> 
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="/manifest.json" />
+  <script>
+    navigator.serviceWorker.register('service-worker.js')
+  </script>
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
+
 <body>
   <ul class="pages">
     <li class="chat page">
       <div class="chatArea">
         <ul class="messages"></ul>
       </div>
-      <input class="inputMessage" placeholder="Type here..."/>
+      <input class="inputMessage" placeholder="Type here..." />
     </li>
     <li class="login page">
       <div class="form">
@@ -27,4 +37,5 @@
   <script src="/socket.io/socket.io.js"></script>
   <script src="/main.js"></script>
 </body>
+
 </html>
