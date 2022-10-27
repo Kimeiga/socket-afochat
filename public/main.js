@@ -71,6 +71,10 @@ $(function() {
     addMessageElement($el, options);
   }
 
+  function isImage(url) {
+    return /\.(jpg|jpeg|png|webp|avif|gif|svg)/.test(url);
+  }
+
   // Adds the visual chat message to the message list
   const addChatMessage = (data, options = {}) => {
     // Don't fade the message in if there is an 'X was typing'
@@ -83,8 +87,11 @@ $(function() {
     const $usernameDiv = $('<span class="username"/>')
       .text(data.username)
       .css('color', getUsernameColor(data.username));
-    const $messageBodyDiv = $('<span class="messageBody">')
-      .text(data.message);
+
+    // if message is a url of an image, make an image
+    const $messageBodyDiv = !isImage(data.message) ?
+     $('<span class="messageBody">').text(data.message) :
+     $('<img class="messageImg" referrerpolicy="origin-when-cross-origin">').attr("src", data.message).attr("alt", `image from ${data.username}`);
 
     const typingClass = data.typing ? 'typing' : '';
     const $messageDiv = $('<li class="message"/>')

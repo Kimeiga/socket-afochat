@@ -127,6 +127,11 @@ ul {
   color: gray;
 }
 
+.messageImg {
+  max-height: 500px;
+  max-width: 100%;
+}
+
 .username {
   font-weight: 700;
   overflow: hidden;
