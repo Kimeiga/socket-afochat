@@ -225,7 +225,7 @@ $(function() {
   socket.on('login', (data) => {
     connected = true;
     // Display the welcome message
-    const message = 'Welcome to AfoChat – ';
+    const message = 'Welcome to Afochat – ';
     log(message, {
       prepend: true
     });
